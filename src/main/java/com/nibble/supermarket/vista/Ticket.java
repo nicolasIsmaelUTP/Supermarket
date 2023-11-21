@@ -27,43 +27,91 @@ public class Ticket extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        botonAnul = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        botonRepet = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        botonVenta = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        generalBotones = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(255, 204, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        botonAnul.setBackground(new java.awt.Color(255, 204, 204));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jLabel3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Anulación");
+
+        javax.swing.GroupLayout botonAnulLayout = new javax.swing.GroupLayout(botonAnul);
+        botonAnul.setLayout(botonAnulLayout);
+        botonAnulLayout.setHorizontalGroup(
+            botonAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+        botonAnulLayout.setVerticalGroup(
+            botonAnulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(botonAnul, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, 40));
+
+        botonRepet.setBackground(new java.awt.Color(255, 204, 204));
+        botonRepet.setToolTipText("");
+
+        jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Repetición");
+
+        javax.swing.GroupLayout botonRepetLayout = new javax.swing.GroupLayout(botonRepet);
+        botonRepet.setLayout(botonRepetLayout);
+        botonRepetLayout.setHorizontalGroup(
+            botonRepetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+        botonRepetLayout.setVerticalGroup(
+            botonRepetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(botonRepet, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, 40));
+
+        botonVenta.setBackground(new java.awt.Color(248, 232, 230));
+
+        jLabel1.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Ventas");
+
+        javax.swing.GroupLayout botonVentaLayout = new javax.swing.GroupLayout(botonVenta);
+        botonVenta.setLayout(botonVentaLayout);
+        botonVentaLayout.setHorizontalGroup(
+            botonVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+        botonVentaLayout.setVerticalGroup(
+            botonVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(botonVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, 40));
+
+        generalBotones.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout generalBotonesLayout = new javax.swing.GroupLayout(generalBotones);
+        generalBotones.setLayout(generalBotonesLayout);
+        generalBotonesLayout.setHorizontalGroup(
+            generalBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 690, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        generalBotonesLayout.setVerticalGroup(
+            generalBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 690, 40));
-
-        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, -1, 40));
+        jPanel2.add(generalBotones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 690, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,8 +163,13 @@ public class Ticket extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel botonAnul;
+    private javax.swing.JPanel botonRepet;
+    private javax.swing.JPanel botonVenta;
+    private javax.swing.JPanel generalBotones;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }
