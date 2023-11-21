@@ -1,6 +1,5 @@
 package com.nibble.supermarket.logicaVista;
 
-import com.nibble.supermarket.dao.DaoManager;
 import com.nibble.supermarket.modelo.Cliente;
 import com.nibble.supermarket.servicios.ClienteServicio;
 import com.nibble.supermarket.vista.MantenimientoClientes;
@@ -12,8 +11,6 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class CtrlMantenimientoClientes implements ActionListener {
-
-    //CLASE MODELO
     Cliente cliente = new Cliente();
     ClienteServicio clienteServicio = new ClienteServicio();
     MantenimientoClientes view = new MantenimientoClientes();
