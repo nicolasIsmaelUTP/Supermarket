@@ -3,19 +3,35 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.nibble.supermarket.vista;
+import java.awt.BorderLayout;
+import javax.swing.JOptionPane;
+import javax.swing.*;
 
-/**
- *
- * @author NICOLAS
- */
-public class Main extends javax.swing.JFrame {
+ 
+public class Main extends javax.swing.JFrame  {
 
     /**
      * Creates new form Main
      */
     public Main() {
         initComponents();
+        Repetición p1 = new Repetición();
+        InitContent(p1);
+        
+        
     }
+    
+    private void InitContent(JPanel p){
+        p.setSize(860, 480);
+        p.setLocation(0, 0);
+        
+        content.removeAll();
+        content.add(p, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,13 +50,15 @@ public class Main extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        BtnCerrarSesion = new javax.swing.JLabel();
-        BtnRegistrarPedido = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        BtnImprimirTicket = new javax.swing.JLabel();
+        BtnVentas = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        BtnRepeticion = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        btnCerrarSesion = new javax.swing.JButton();
+        BtnAnulacion = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -68,51 +86,99 @@ public class Main extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 230));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-cerrar.png"))); // NOI18N
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 730, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 720, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-registrar.png"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
-        BtnCerrarSesion.setBackground(new java.awt.Color(252, 203, 166));
-        BtnCerrarSesion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        BtnCerrarSesion.setText("                         Cerrar Sesion");
-        BtnCerrarSesion.setIconTextGap(40);
-        BtnCerrarSesion.setOpaque(true);
-        jPanel1.add(BtnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, 350, 60));
+        BtnVentas.setBackground(new java.awt.Color(240, 240, 240));
+        BtnVentas.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        BtnVentas.setText("Ventas");
+        BtnVentas.setToolTipText("");
+        BtnVentas.setBorder(null);
+        BtnVentas.setBorderPainted(false);
+        BtnVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVentasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 350, 60));
 
-        BtnRegistrarPedido.setBackground(new java.awt.Color(240, 240, 240));
-        BtnRegistrarPedido.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        BtnRegistrarPedido.setText("                    Registrar Pedido");
-        BtnRegistrarPedido.setIconTextGap(40);
-        BtnRegistrarPedido.setOpaque(true);
-        jPanel1.add(BtnRegistrarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 350, 60));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-repetir.png"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-ticket.png"))); // NOI18N
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
+        BtnRepeticion.setBackground(new java.awt.Color(240, 240, 240));
+        BtnRepeticion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        BtnRepeticion.setText("Repetición");
+        BtnRepeticion.setBorderPainted(false);
+        BtnRepeticion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRepeticionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnRepeticion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 350, 60));
 
-        BtnImprimirTicket.setBackground(new java.awt.Color(240, 240, 240));
-        BtnImprimirTicket.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        BtnImprimirTicket.setText("                     Imprimir ticket");
-        BtnImprimirTicket.setIconTextGap(40);
-        BtnImprimirTicket.setOpaque(true);
-        jPanel1.add(BtnImprimirTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 350, 60));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon-borrar.png"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, -1, -1));
+
+        btnCerrarSesion.setBackground(new java.awt.Color(252, 203, 166));
+        btnCerrarSesion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnCerrarSesion.setText("Cerrar Sesión");
+        btnCerrarSesion.setBorderPainted(false);
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, 350, 70));
+
+        BtnAnulacion.setBackground(new java.awt.Color(240, 240, 240));
+        BtnAnulacion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        BtnAnulacion.setText("Anulación");
+        BtnAnulacion.setBorderPainted(false);
+        BtnAnulacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAnulacionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnAnulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 350, 60));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 780));
 
         jLabel13.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         jLabel13.setText("SUPERMARKET NIBBLE");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 40, -1, -1));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(250, 172, 119));
         jLabel1.setOpaque(true);
         jLabel1.setVerifyInputWhenFocusTarget(false);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 1080, 120));
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 1080, 660));
+        content.setBackground(new java.awt.Color(204, 204, 204));
+        content.setAlignmentX(0.0F);
+        content.setAlignmentY(0.0F);
+        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 1080, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVentasActionPerformed
+        scaner s = new scaner();
+        s.setLocationRelativeTo(this);
+        s.setVisible(true);
+    }//GEN-LAST:event_BtnVentasActionPerformed
+
+    private void BtnRepeticionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRepeticionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnRepeticionActionPerformed
+
+    private void BtnAnulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAnulacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnAnulacionActionPerformed
+
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,14 +212,16 @@ public class Main extends javax.swing.JFrame {
             new Main().setVisible(true);
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel BtnCerrarSesion;
-    private javax.swing.JLabel BtnImprimirTicket;
-    private javax.swing.JLabel BtnRegistrarPedido;
+    private javax.swing.JButton BtnAnulacion;
+    private javax.swing.JButton BtnRepeticion;
+    private javax.swing.JButton BtnVentas;
+    private javax.swing.JButton btnCerrarSesion;
+    private javax.swing.JPanel content;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
@@ -161,7 +229,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+
+
 }

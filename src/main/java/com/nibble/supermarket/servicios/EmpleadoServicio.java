@@ -4,6 +4,8 @@ package com.nibble.supermarket.servicios;
 import com.nibble.supermarket.dao.DaoManager;
 import com.nibble.supermarket.dao.exceptions.NonexistentEntityException;
 import com.nibble.supermarket.modelo.Empleado;
+import com.nibble.supermarket.modelo.Turno;
+
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -48,6 +50,25 @@ public class EmpleadoServicio implements IServicio<Empleado,String>{
     @Override
     public List<Empleado> buscarTodos() {
         return DaoManager.getInstance().getEmpleadoDao().findEmpleadoEntities();
+    }
+
+    
+    /**
+        * Autentica a un empleado utilizando su DNI y contraseña.
+        * Si el empleado es autenticado exitosamente, se abre un turno para él y se guarda en la base de datos.
+        * 
+        * @param dni el DNI del empleado
+        * @param password la contraseña del empleado
+        * @return el turno abierto para el empleado autenticado, o null si la autenticación falla
+        */
+    public Turno autenticar(String dni, String password) {
+        Empleado empleado = buscarPorId(dni);
+        if (empleado != null && empleado.getPassword().equals(password)) {
+            Turno turno = empleado.abrirTurno();
+            DaoManager.getInstance().getTurnoDao().create(turno);
+            return turno;
+        }
+        return null;
     }
     
 }
