@@ -39,6 +39,7 @@ public class CtrlMantenimientoClientes implements ActionListener {
     }
 
     public void listar(JTable tabla) {
+        this.modeloTabla = (DefaultTableModel)tabla.getModel();
         List<Cliente> lista = clienteServicio.buscarTodos();
         Object[] objeto = new Object[6];
         for (int i = 0; i < lista.size(); i++) {
