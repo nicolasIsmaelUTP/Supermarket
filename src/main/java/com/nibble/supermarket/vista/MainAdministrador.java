@@ -5,6 +5,7 @@
 package com.nibble.supermarket.vista;
 
 import com.nibble.supermarket.logicaVista.CtrlMantenimientoClientes;
+import com.nibble.supermarket.logicaVista.CtrlMantenimientoEmpleados;
 import javax.swing.JFrame;
 import javax.xml.crypto.dsig.spec.C14NMethodParameterSpec;
 
@@ -15,6 +16,7 @@ import javax.xml.crypto.dsig.spec.C14NMethodParameterSpec;
 public class MainAdministrador extends javax.swing.JFrame {
 
     MantenimientoClientes v1;
+    MatenimientoEmpleados v2;
     
     public MainAdministrador() {
         initComponents();
@@ -34,6 +36,7 @@ public class MainAdministrador extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         subMantClientes = new javax.swing.JMenuItem();
+        subAdmEmpleados = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,6 +61,14 @@ public class MainAdministrador extends javax.swing.JFrame {
             }
         });
         jMenu1.add(subMantClientes);
+
+        subAdmEmpleados.setText("Administración de empleados");
+        subAdmEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subAdmEmpleadosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(subAdmEmpleados);
 
         jMenuBar1.add(jMenu1);
 
@@ -95,6 +106,22 @@ public class MainAdministrador extends javax.swing.JFrame {
             c1.iniciar();
         } 
     }//GEN-LAST:event_subMantClientesActionPerformed
+
+    private void subAdmEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subAdmEmpleadosActionPerformed
+        if (v2 == null || v2.isClosed()) {
+            v2 = new MatenimientoEmpleados();
+            CtrlMantenimientoEmpleados c2 = new CtrlMantenimientoEmpleados(v2);
+            
+            jdpMainAdministrador.add(v2); //Agregamos al JDesktopPane
+
+            //Para que aparezca en el centro
+            int x = (jdpMainAdministrador.getWidth() - v2.getWidth()) / 2;
+            int y = (jdpMainAdministrador.getHeight() - v2.getHeight()) / 2;
+            v2.setLocation(x, y);
+            
+            c2.iniciar();
+        } 
+    }//GEN-LAST:event_subAdmEmpleadosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,6 +163,7 @@ public class MainAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     public javax.swing.JDesktopPane jdpMainAdministrador;
+    private javax.swing.JMenuItem subAdmEmpleados;
     public javax.swing.JMenuItem subMantClientes;
     // End of variables declaration//GEN-END:variables
 }
