@@ -108,6 +108,9 @@ public class Ticket implements Serializable {
         linea.setProducto(producto);
         linea.setTipoLinea(TipoLinea.VENTA);
         addLinea(linea);
+
+        // Restar stock de producto
+        linea.getProducto().setStock(linea.getProducto().getStock() - 1);
     }
 
     public void registrarVenta(Producto producto, int cantidad) {
@@ -116,6 +119,9 @@ public class Ticket implements Serializable {
         linea.setProducto(producto);
         linea.setTipoLinea(TipoLinea.REPETICION);
         addLinea(linea);
+
+        // Restar stock de producto
+        linea.getProducto().setStock(linea.getProducto().getStock() - cantidad);
     }
 
     public void anularVenta(Linea linea){
@@ -124,6 +130,9 @@ public class Ticket implements Serializable {
         lineaAnulacion.setProducto(linea.getProducto());
         lineaAnulacion.setTipoLinea(TipoLinea.ANULACION);
         addLinea(lineaAnulacion);
+
+        // Sumar stock de producto
+        linea.getProducto().setStock(linea.getProducto().getStock() + linea.getCantidad());
     }
 
     public void registrarDevolucion(Producto producto) {
@@ -132,6 +141,9 @@ public class Ticket implements Serializable {
         linea.setProducto(producto);
         linea.setTipoLinea(TipoLinea.DEVOLUCION);
         addLinea(linea);
+
+        // Sumar stock de producto
+        linea.getProducto().setStock(linea.getProducto().getStock() + 1);
     }
 
     public void registrarDevolucion(Producto producto, int cantidad) {
@@ -140,5 +152,8 @@ public class Ticket implements Serializable {
         linea.setProducto(producto);
         linea.setTipoLinea(TipoLinea.DEVOLUCION);
         addLinea(linea);
+
+        // Sumar stock de producto
+        linea.getProducto().setStock(linea.getProducto().getStock() + cantidad);
     }
 }

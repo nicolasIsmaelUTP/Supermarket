@@ -1,6 +1,8 @@
 package com.nibble.supermarket.modelo;
 
 import java.io.Serializable;
+import java.time.LocalTime;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -74,4 +76,19 @@ public class Empleado implements Serializable {
         this.password = password;
     }
     
+    public Turno abrirTurno() {
+        Turno turno = new Turno();
+        LocalTime horaActual = LocalTime.now();
+
+        if (horaActual.isBefore(LocalTime.NOON)) {
+            turno.setTipoTurno(TipoTurno.MANANA);
+        } else if (horaActual.isBefore(LocalTime.of(18, 0))) {
+            turno.setTipoTurno(TipoTurno.TARDE);
+        } else {
+            turno.setTipoTurno(TipoTurno.NOCHE);
+        }
+        turno.setEmpleado(this);
+        return turno;
+    }
+
 }
