@@ -72,11 +72,22 @@ public class Ticket implements Serializable {
     }
 
     public double getTotal() {
+        for (Linea linea : lineas) {
+            total += linea.getSubtotal();
+        }
         return total;
     }
 
     public void setTotal(double total) {
         this.total = total;
+    }
+
+    public Turno getTurno() {
+        return turno;
+    }
+
+    public void setTurno(Turno turno) {
+        this.turno = turno;
     }
 
     // Métodos de conveniencia para agregar y remover lineas

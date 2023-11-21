@@ -11,7 +11,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="subMantClientes">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Administraci&#xf3;n de clientes"/>
+                <Property name="text" type="java.lang.String" value="Mantenimiento de clientes"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMantClientesActionPerformed"/>
@@ -22,10 +22,18 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="subAdmEmpleados">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Administraci&#xf3;n de empleados"/>
+                <Property name="text" type="java.lang.String" value="Mantenimineto de empleados"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subAdmEmpleadosActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="subMantProductos">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mantenimiento de productos"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMantProductosActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

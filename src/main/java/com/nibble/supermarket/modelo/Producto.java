@@ -14,7 +14,7 @@ import javax.persistence.ManyToMany;
 public class Producto implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int id; 
     private String nombre;
     private String descripcion;
     private double precio;

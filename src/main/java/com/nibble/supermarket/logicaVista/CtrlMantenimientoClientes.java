@@ -203,7 +203,6 @@ public class CtrlMantenimientoClientes implements ActionListener {
             cliente = clienteServicio.buscarPorId(dni);
             if (cliente == null || cliente.getDni().equals("")) {
                 JOptionPane.showMessageDialog(view, "No se encontro ningun Cliente con ese DNI.");
-                view.btnCancelar.setEnabled(true);
             } else {
                 limpiarTabla();
                 Object[] objeto = new Object[6];

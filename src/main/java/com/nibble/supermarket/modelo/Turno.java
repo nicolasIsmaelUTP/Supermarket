@@ -67,6 +67,7 @@ public class Turno implements Serializable {
     // Métodos de conveniencia para agregar y remover tickets
     
     public Ticket addTicket(Ticket ticket) {
+        ticket.setTurno(this);
         tickets.add(ticket);
         return ticket;
     }
