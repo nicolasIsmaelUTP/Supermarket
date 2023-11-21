@@ -11,26 +11,21 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class Producto implements Serializable {
+public class Promocion implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
     private String descripcion;
-    private double precio;
-    private int stock;
-    @ManyToMany(fetch = FetchType.LAZY)
-    private List<Promocion> promociones;
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "promociones")
+    private List<Producto> productos;
 
-    public Producto() {
+    public Promocion() {
     }
 
-    public Producto(String nombre, String descripcion, double precio, int stock, List<Promocion> promociones) {
+    public Promocion(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.precio = precio;
-        this.stock = stock;
-        this.promociones = promociones;
     }
 
     public int getId() {
@@ -57,28 +52,5 @@ public class Producto implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public double getPrecio() {
-        return precio;
-    }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
-    public int getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
-
-    public List<Promocion> getPromociones() {
-        return promociones;
-    }
-
-    public void setPromociones(List<Promocion> promociones) {
-        this.promociones = promociones;
-    }
-    
 }
