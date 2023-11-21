@@ -55,6 +55,9 @@ public class MatenimientoEmpleados extends javax.swing.JInternalFrame {
         txtBuscarEmpleado = new javax.swing.JTextField();
         btnBuscarEmpleado = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+
         jtpMantenimientoEmpleados.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jtResumen.setModel(new javax.swing.table.DefaultTableModel(
