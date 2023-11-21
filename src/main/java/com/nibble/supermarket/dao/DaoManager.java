@@ -13,6 +13,10 @@ public class DaoManager {
     // DAO
     private ClienteJpaController clientes = null;
     private ProductoJpaController productos = null;
+    private EmpleadoJpaController empleados = null;
+    private TurnoJpaController turnos = null;
+    private TicketJpaController tickets = null;
+    private LineaJpaController lineas = null;
 
     // Constructor privado
     public DaoManager() {
@@ -28,6 +32,7 @@ public class DaoManager {
     }
 
     // Métodos para obtener los DAO
+
     public ClienteJpaController getClienteDao() {
         if (clientes == null) {
             clientes = new ClienteJpaController(emf);
@@ -41,4 +46,33 @@ public class DaoManager {
         }
         return productos;
     }
+
+    public EmpleadoJpaController getEmpleadoDao() {
+        if (empleados == null) {
+            empleados = new EmpleadoJpaController(emf);
+        }
+        return empleados;
+    }
+
+    public TurnoJpaController getTurnoDao() {
+        if (turnos == null) {
+            turnos = new TurnoJpaController(emf);
+        }
+        return turnos;
+    }
+
+    public TicketJpaController getTicketDao() {
+        if (tickets == null) {
+            tickets = new TicketJpaController(emf);
+        }
+        return tickets;
+    }
+
+    public LineaJpaController getLineaDao() {
+        if (lineas == null) {
+            lineas = new LineaJpaController(emf);
+        }
+        return lineas;
+    }
+
 }

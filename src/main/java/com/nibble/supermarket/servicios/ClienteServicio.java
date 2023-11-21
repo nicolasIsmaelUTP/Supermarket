@@ -51,4 +51,8 @@ public class ClienteServicio implements IServicio<Cliente, String>{
 
     // Otros métodos de la clase ClienteServicio
     
+    public boolean existeCliente(String id) {
+        Cliente cliente = buscarPorId(id);
+        return cliente != null;
+    }
 }
