@@ -28,11 +28,10 @@ public class Login extends javax.swing.JFrame {
         contra = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         usuu = new javax.swing.JLabel();
-        ingresoUsu1 = new javax.swing.JTextField();
+        txtUsername = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
-        pass = new javax.swing.JPasswordField();
-        labelBoton = new javax.swing.JPanel();
-        contentBoton = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JPasswordField();
+        btnIniciarSesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -140,72 +139,50 @@ public class Login extends javax.swing.JFrame {
         usuu.setText("Usuario");
         background.add(usuu, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
 
-        ingresoUsu1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        ingresoUsu1.setForeground(new java.awt.Color(255, 204, 153));
-        ingresoUsu1.setText("Ingrese su número de DNI");
-        ingresoUsu1.setToolTipText("");
-        ingresoUsu1.setBorder(null);
-        ingresoUsu1.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtUsername.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtUsername.setForeground(new java.awt.Color(255, 204, 153));
+        txtUsername.setText("Ingrese su número de DNI");
+        txtUsername.setToolTipText("");
+        txtUsername.setBorder(null);
+        txtUsername.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                ingresoUsu1MousePressed(evt);
+                txtUsernameMousePressed(evt);
             }
         });
-        ingresoUsu1.addActionListener(new java.awt.event.ActionListener() {
+        txtUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ingresoUsu1ActionPerformed(evt);
+                txtUsernameActionPerformed(evt);
             }
         });
-        background.add(ingresoUsu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 280, 30));
+        background.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 280, 30));
         background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 300, 40));
 
-        pass.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        pass.setForeground(new java.awt.Color(255, 204, 153));
-        pass.setText("********");
-        pass.setBorder(null);
-        pass.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtPassword.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(255, 204, 153));
+        txtPassword.setText("********");
+        txtPassword.setBorder(null);
+        txtPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                passMousePressed(evt);
+                txtPasswordMousePressed(evt);
             }
         });
-        pass.addActionListener(new java.awt.event.ActionListener() {
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passActionPerformed(evt);
+                txtPasswordActionPerformed(evt);
             }
         });
-        background.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 250, 30));
+        background.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 250, 30));
 
-        labelBoton.setBackground(new java.awt.Color(249, 135, 0));
-        labelBoton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        contentBoton.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
-        contentBoton.setForeground(new java.awt.Color(255, 255, 255));
-        contentBoton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        contentBoton.setText("Iniciar sesión");
-        contentBoton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        contentBoton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                contentBotonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                contentBotonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                contentBotonMouseExited(evt);
+        btnIniciarSesion.setBackground(new java.awt.Color(255, 153, 0));
+        btnIniciarSesion.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        btnIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        btnIniciarSesion.setText("Iniciar sesión");
+        btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIniciarSesionActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout labelBotonLayout = new javax.swing.GroupLayout(labelBoton);
-        labelBoton.setLayout(labelBotonLayout);
-        labelBotonLayout.setHorizontalGroup(
-            labelBotonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contentBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-        );
-        labelBotonLayout.setVerticalGroup(
-            labelBotonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contentBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        background.add(labelBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 140, 40));
+        background.add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 140, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -221,13 +198,13 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ingresoUsu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresoUsu1ActionPerformed
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ingresoUsu1ActionPerformed
+    }//GEN-LAST:event_txtUsernameActionPerformed
 
-    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passActionPerformed
+    }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMousePressed
         xMouse=evt.getX();
@@ -258,33 +235,25 @@ public class Login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_botonSalidaMouseExited
 
-    private void contentBotonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contentBotonMouseEntered
-        contentBoton.setBackground(Color.gray);
-    }//GEN-LAST:event_contentBotonMouseEntered
+    private void txtUsernameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsernameMousePressed
+        txtUsername.setText("");
+        txtUsername.setForeground(Color.black);
+        txtPassword.setText("*********");
+        txtPassword.setForeground(Color.gray);
 
-    private void contentBotonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contentBotonMouseExited
-        contentBoton.setBackground(Color.gray);
-    }//GEN-LAST:event_contentBotonMouseExited
+    }//GEN-LAST:event_txtUsernameMousePressed
 
-    private void ingresoUsu1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresoUsu1MousePressed
-        ingresoUsu1.setText("");
-        ingresoUsu1.setForeground(Color.black);
-        pass.setText("*********");
-        pass.setForeground(Color.gray);
+    private void txtPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPasswordMousePressed
+        txtUsername.setText("Ingrese su número de DNI");
+        txtUsername.setForeground(Color.gray);
+        txtPassword.setText("");
+        txtPassword.setForeground(Color.black);
 
-    }//GEN-LAST:event_ingresoUsu1MousePressed
+    }//GEN-LAST:event_txtPasswordMousePressed
 
-    private void passMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passMousePressed
-        ingresoUsu1.setText("Ingrese su número de DNI");
-        ingresoUsu1.setForeground(Color.gray);
-        pass.setText("");
-        pass.setForeground(Color.black);
-
-    }//GEN-LAST:event_passMousePressed
-
-    private void contentBotonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contentBotonMouseClicked
-        //
-    }//GEN-LAST:event_contentBotonMouseClicked
+    private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -322,20 +291,19 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
     private javax.swing.JPanel botonSalida;
-    private javax.swing.JLabel contentBoton;
+    public javax.swing.JButton btnIniciarSesion;
     private javax.swing.JLabel contentSalida;
     private javax.swing.JLabel contra;
     private javax.swing.JPanel header;
     private javax.swing.JLabel imgLogin;
-    private javax.swing.JTextField ingresoUsu1;
     private javax.swing.JLabel iniSesion;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JPanel labelBoton;
     private javax.swing.JLabel loguito;
     private javax.swing.JLabel nibble;
     private javax.swing.JLabel nombreMarket;
-    private javax.swing.JPasswordField pass;
+    public javax.swing.JPasswordField txtPassword;
+    public javax.swing.JTextField txtUsername;
     private javax.swing.JLabel usuu;
     // End of variables declaration//GEN-END:variables
 }
