@@ -56,6 +56,9 @@ public class MantenimientoClientes extends javax.swing.JInternalFrame {
         txtBuscarCliente = new javax.swing.JTextField();
         btnBuscarCliente = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+
         jtpMantenimientoClientes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jtResumen.setModel(new javax.swing.table.DefaultTableModel(

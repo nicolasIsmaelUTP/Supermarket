@@ -1,6 +1,7 @@
 package com.nibble.supermarket.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -20,7 +21,7 @@ public class Turno implements Serializable {
     @ManyToOne
     private Empleado empleado;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "turno")
-    private List<Ticket> tickets;
+    private List<Ticket> tickets = new ArrayList<>();
 
     public Turno() {
     }
@@ -63,5 +64,15 @@ public class Turno implements Serializable {
         this.tickets = tickets;
     }
     
+    // Métodos de conveniencia para agregar y remover tickets
     
+    public Ticket addTicket(Ticket ticket) {
+        tickets.add(ticket);
+        return ticket;
+    }
+
+    public Ticket removeTicket(Ticket ticket) {
+        tickets.remove(ticket);
+        return ticket;
+    }
 }
