@@ -26,6 +26,7 @@ public class CtrlMantenimientoClientes implements ActionListener {
         this.view.btnActualizar.addActionListener(this);
         this.view.btnEliminar.addActionListener(this);
         this.view.btnCancelar.addActionListener(this);
+        this.view.btnBuscarCliente.addActionListener(this);
 
         this.view.btnGuardar.setEnabled(false);
         this.view.btnActualizar.setEnabled(false);
@@ -180,31 +181,43 @@ public class CtrlMantenimientoClientes implements ActionListener {
 
     public void buscar(JTable tabla) {
         this.modeloTabla = (DefaultTableModel) tabla.getModel();
-        String dni;
-        try {
-            dni = view.txtBuscarCliente.getText();
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Error, casillero en blanco o no numerico.");
-            listar(view.jtResumen);
+        String dni = view.txtBuscarCliente.getText();
+
+        boolean esNumero = true;
+        for (char caracter : dni.toCharArray()) {
+            if (!Character.isDigit(caracter)) {
+                esNumero = false;
+                break;
+            }
+        }
+
+        if (!esNumero) {
+            JOptionPane.showMessageDialog(view, "Error, el DNI debe contener solo numeros.");
+            view.btnCancelar.setEnabled(true);
             return;
         }
 
-        cliente = clienteServicio.buscarPorId(dni);
-        if (cliente == null || cliente.getDni().equals("")) {
-            JOptionPane.showMessageDialog(view, "No se encontró ningún Cliente con ese DNI.");
-            view.btnCancelar.setEnabled(true);
+        if(view.txtBuscarCliente.getText().equals("")){
+            JOptionPane.showMessageDialog(view, "El campo esta vacio, ingrese el DNI por favor.");
         } else {
-            Object[] objeto = new Object[6];
-            objeto[0] = cliente.getDni();
-            objeto[1] = cliente.getPrimerNombre();
-            objeto[2] = cliente.getSegundoNombre();
-            objeto[3] = cliente.getPrimerApellido();
-            objeto[4] = cliente.getSegundoApellido();
-            objeto[5] = cliente.getEdad();
-            modeloTabla.addRow(objeto);
+            cliente = clienteServicio.buscarPorId(dni);
+            if (cliente == null || cliente.getDni().equals("")) {
+                JOptionPane.showMessageDialog(view, "No se encontro ningun Cliente con ese DNI.");
+                view.btnCancelar.setEnabled(true);
+            } else {
+                limpiarTabla();
+                Object[] objeto = new Object[6];
+                objeto[0] = cliente.getDni();
+                objeto[1] = cliente.getPrimerNombre();
+                objeto[2] = cliente.getSegundoNombre();
+                objeto[3] = cliente.getPrimerApellido();
+                objeto[4] = cliente.getSegundoApellido();
+                objeto[5] = cliente.getEdad();
+                modeloTabla.addRow(objeto);
 
-            view.jtResumen.setModel(modeloTabla);
-            view.btnCancelar.setEnabled(true);
+                view.jtResumen.setModel(modeloTabla);
+                view.btnCancelar.setEnabled(true);
+            }
         }
     }
 
@@ -252,7 +265,6 @@ public class CtrlMantenimientoClientes implements ActionListener {
             view.btnBuscarCliente.setEnabled(true);
         }
         if (e.getSource() == view.btnBuscarCliente) {
-            limpiarTabla();
             buscar(view.jtResumen);
         }
     }
