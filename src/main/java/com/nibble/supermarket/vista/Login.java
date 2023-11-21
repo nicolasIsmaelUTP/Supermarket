@@ -8,6 +8,7 @@ public class Login extends javax.swing.JFrame {
     int xMouse, yMouse;
     public Login() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     
@@ -48,7 +49,7 @@ public class Login extends javax.swing.JFrame {
         nombreMarket.setText("SuperMarket Nibble");
         background.add(nombreMarket, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 260, 80));
 
-        imgLogin.setIcon(new javax.swing.ImageIcon("C:\\Users\\dial_\\Documents\\NetBeansProjects\\supermarket\\src\\main\\java\\com\\nibble\\supermarket\\img\\login.jpg")); // NOI18N
+        imgLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login.jpg"))); // NOI18N
         background.add(imgLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 310, 510));
 
         botonSalida.setBackground(new java.awt.Color(255, 246, 246));
@@ -62,7 +63,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        contentSalida.setIcon(new javax.swing.ImageIcon("C:\\Users\\dial_\\Documents\\NetBeansProjects\\supermarket\\src\\main\\java\\com\\nibble\\supermarket\\img\\salir-alt.png")); // NOI18N
+        contentSalida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/salir-alt.png"))); // NOI18N
         contentSalida.setToolTipText("");
         contentSalida.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         contentSalida.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -210,15 +211,11 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

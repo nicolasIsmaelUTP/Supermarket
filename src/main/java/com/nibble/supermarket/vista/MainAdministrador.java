@@ -20,7 +20,7 @@ public class MainAdministrador extends javax.swing.JFrame {
     
     public MainAdministrador() {
         initComponents();
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -41,15 +41,17 @@ public class MainAdministrador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jdpMainAdministrador.setBackground(new java.awt.Color(230, 244, 245));
+
         javax.swing.GroupLayout jdpMainAdministradorLayout = new javax.swing.GroupLayout(jdpMainAdministrador);
         jdpMainAdministrador.setLayout(jdpMainAdministradorLayout);
         jdpMainAdministradorLayout.setHorizontalGroup(
             jdpMainAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 748, Short.MAX_VALUE)
+            .addGap(0, 934, Short.MAX_VALUE)
         );
         jdpMainAdministradorLayout.setVerticalGroup(
             jdpMainAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 520, Short.MAX_VALUE)
+            .addGap(0, 601, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Menu");
@@ -81,11 +83,15 @@ public class MainAdministrador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jdpMainAdministrador)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jdpMainAdministrador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jdpMainAdministrador)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jdpMainAdministrador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
