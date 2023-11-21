@@ -48,14 +48,17 @@ public class Main extends javax.swing.JFrame  {
         jLabel3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         BtnVentas = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         BtnRepeticion = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        btnCerrarSesion = new javax.swing.JButton();
         BtnAnulacion = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        btnCerrarSesion = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
@@ -85,63 +88,86 @@ public class Main extends javax.swing.JFrame  {
         jLabel2.setOpaque(true);
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 230));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-cerrar.png"))); // NOI18N
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 720, -1, -1));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-registrar.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
+        jPanel2.setBackground(new java.awt.Color(246, 246, 246));
+        jPanel2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 40, 10));
 
         BtnVentas.setBackground(new java.awt.Color(240, 240, 240));
         BtnVentas.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        BtnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-regis.png"))); // NOI18N
         BtnVentas.setText("Ventas");
         BtnVentas.setToolTipText("");
-        BtnVentas.setBorder(null);
+        BtnVentas.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         BtnVentas.setBorderPainted(false);
+        BtnVentas.setContentAreaFilled(false);
+        BtnVentas.setIconTextGap(40);
         BtnVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnVentasActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 350, 60));
+        jPanel2.add(BtnVentas);
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 350, 60));
+
+        jPanel3.setBackground(new java.awt.Color(246, 246, 246));
+        jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 40, 10));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-repetir.png"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+        jPanel3.add(jLabel7);
 
         BtnRepeticion.setBackground(new java.awt.Color(240, 240, 240));
         BtnRepeticion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         BtnRepeticion.setText("Repetición");
         BtnRepeticion.setBorderPainted(false);
+        BtnRepeticion.setContentAreaFilled(false);
         BtnRepeticion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnRepeticionActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnRepeticion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 350, 60));
+        jPanel3.add(BtnRepeticion);
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 350, 60));
+
+        jPanel4.setBackground(new java.awt.Color(246, 246, 246));
+        jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 40, 10));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon-borrar.png"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, -1, -1));
-
-        btnCerrarSesion.setBackground(new java.awt.Color(252, 203, 166));
-        btnCerrarSesion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnCerrarSesion.setText("Cerrar Sesión");
-        btnCerrarSesion.setBorderPainted(false);
-        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrarSesionActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, 350, 70));
+        jPanel4.add(jLabel8);
 
         BtnAnulacion.setBackground(new java.awt.Color(240, 240, 240));
         BtnAnulacion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         BtnAnulacion.setText("Anulación");
         BtnAnulacion.setBorderPainted(false);
+        BtnAnulacion.setContentAreaFilled(false);
         BtnAnulacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnAnulacionActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnAnulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 350, 60));
+        jPanel4.add(BtnAnulacion);
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 350, 60));
+
+        jPanel5.setBackground(new java.awt.Color(252, 203, 166));
+        jPanel5.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 40, 10));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-cerrar.png"))); // NOI18N
+        jPanel5.add(jLabel12);
+
+        btnCerrarSesion.setBackground(new java.awt.Color(252, 203, 166));
+        btnCerrarSesion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnCerrarSesion.setText("Cerrar Sesión");
+        btnCerrarSesion.setBorderPainted(false);
+        btnCerrarSesion.setContentAreaFilled(false);
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnCerrarSesion);
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, 350, 70));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 780));
 
@@ -163,17 +189,22 @@ public class Main extends javax.swing.JFrame  {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVentasActionPerformed
-        scaner s = new scaner();
+        AgregarVentas s = new AgregarVentas();
         s.setLocationRelativeTo(this);
         s.setVisible(true);
     }//GEN-LAST:event_BtnVentasActionPerformed
 
+    
     private void BtnRepeticionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRepeticionActionPerformed
-        // TODO add your handling code here:
+        AgregarRepeticion r = new AgregarRepeticion();
+        r.setLocationRelativeTo(this);
+        r.setVisible(true);
     }//GEN-LAST:event_BtnRepeticionActionPerformed
 
     private void BtnAnulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAnulacionActionPerformed
-        // TODO add your handling code here:
+        VentanaEliminacion v = new VentanaEliminacion();
+        v.setLocationRelativeTo(this);
+        v.setVisible(true);
     }//GEN-LAST:event_BtnAnulacionActionPerformed
 
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
@@ -214,6 +245,7 @@ public class Main extends javax.swing.JFrame  {
     }
     
 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAnulacion;
     private javax.swing.JButton BtnRepeticion;
@@ -228,10 +260,13 @@ public class Main extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     // End of variables declaration//GEN-END:variables
 
 
