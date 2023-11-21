@@ -1,6 +1,6 @@
 package com.nibble.supermarket;
 
-import com.nibble.supermarket.servicios.PoblarBD;
+import com.nibble.supermarket.util.PoblarBD;
 
 public class Supermarket {
 

@@ -1,6 +1,7 @@
-package com.nibble.supermarket.servicios;
+package com.nibble.supermarket.util;
 
 import com.nibble.supermarket.modelo.Cliente;
+import com.nibble.supermarket.servicios.ClienteServicio;
 
 public class PoblarBD {
 
