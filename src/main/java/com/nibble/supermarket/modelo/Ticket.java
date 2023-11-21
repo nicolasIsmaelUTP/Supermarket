@@ -69,5 +69,16 @@ public class Ticket implements Serializable {
         this.lineas = lineas;
     }
 
+    // Métodos de conveniencia para agregar y remover lineas
+
+    public Linea addLinea(Linea linea) {
+        getLineas().add(linea);
+        return linea;
+    }
+
+    public Linea removeLinea(Linea linea) {
+        getLineas().remove(linea);
+        return linea;
+    }
 
 }
