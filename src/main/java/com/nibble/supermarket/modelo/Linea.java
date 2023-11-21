@@ -60,7 +60,7 @@ public class Linea implements Serializable {
     public void setTipoLinea(TipoLinea tipoLinea) {
         this.tipoLinea = tipoLinea;
     }
-    
+
     public double getSubtotal() {
         return subtotal;
     }
@@ -69,13 +69,7 @@ public class Linea implements Serializable {
         this.subtotal = subtotal;
     }
 
-    /**
-     * Calcula el subtotal de la línea de acuerdo a la cantidad y el producto.
-     * Si la cantidad es mayor o igual a 3 y el producto tiene una promoción "3x2",
-     * se aplica la promoción. En caso contrario, se calcula el subtotal sin promoción.
-     * @return El subtotal de la línea.
-     */
-    public double calcularSubTotal() {           
+    public double tresPorDos() {
         // Verificar si la cantidad es mayor o igual a 3
         if (cantidad >= 3) {
             // Buscar la promoción "3x2" en las promociones del producto
@@ -83,16 +77,37 @@ public class Linea implements Serializable {
                 if (p.getNombre().equals("3x2")) {
                     // Calcular la cantidad de productos con promoción y sin promoción
                     int cantidadPromocion = cantidad / 3;
-                    int cantidadNormal = cantidad % 3;
-                    // Calcular el subtotal aplicando la promoción
-                    subtotal = cantidadPromocion * 2 * producto.getPrecio() + cantidadNormal * producto.getPrecio();
-                    return subtotal;
+                    // Calcular el descuento que se va a restar
+                    double descuento = cantidadPromocion * producto.getPrecio();
+                    return descuento;
                 }
             }
         }
-        
-        // Calcular el subtotal sin promoción
-        subtotal = cantidad * producto.getPrecio();
-        return subtotal;
+
+        return 0;
+    }
+
+    public double descuentoAdultoMayor() {
+        // Verificar si el cliente es adulto mayor (mayor o igual a 60 años)
+        if (ticket.getCliente().getEdad() >= 60) {
+            // Buscar la promoción "adultomayor" en las promociones del producto
+            for (Promocion p : producto.getPromociones()) {
+                if (p.getNombre().equals("adultomayor")) {
+                    // Calcular el descuento aplicando el 15% del precio del producto
+                    double descuento = producto.getPrecio() * cantidad * 0.15;
+                    return descuento;
+                }
+            }
+        }
+
+        return 0;
+    }
+
+    public void aplicarDescuentos() {
+        // Calcular el subtotal
+        subtotal = producto.getPrecio() * cantidad;
+        // Aplicar descuentos
+        subtotal -= tresPorDos();
+        subtotal -= descuentoAdultoMayor();
     }
 }
