@@ -4,6 +4,8 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.nibble.supermarket.modelo.Producto</class>
     <class>com.nibble.supermarket.modelo.Cliente</class>
+    <class>com.nibble.supermarket.modelo.Empleado</class>
+    <class>com.nibble.supermarket.modelo.Linea</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://nibble-server.database.windows.net:1433;database=nibble-db;user=nibble-user@nibble-server;password=Ad724148;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;"/>
       <property name="javax.persistence.jdbc.user" value="nibble-user"/>
