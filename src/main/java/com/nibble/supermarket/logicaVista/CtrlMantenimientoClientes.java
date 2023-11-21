@@ -11,6 +11,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class CtrlMantenimientoClientes implements ActionListener {
+
     Cliente cliente = new Cliente();
     ClienteServicio clienteServicio = new ClienteServicio();
     MantenimientoClientes view = new MantenimientoClientes();
@@ -39,7 +40,7 @@ public class CtrlMantenimientoClientes implements ActionListener {
     }
 
     public void listar(JTable tabla) {
-        this.modeloTabla = (DefaultTableModel)tabla.getModel();
+        this.modeloTabla = (DefaultTableModel) tabla.getModel();
         List<Cliente> lista = clienteServicio.buscarTodos();
         Object[] objeto = new Object[6];
         for (int i = 0; i < lista.size(); i++) {
@@ -98,19 +99,19 @@ public class CtrlMantenimientoClientes implements ActionListener {
             JOptionPane.showMessageDialog(view, "Debe seleccionar una fila");
             view.jtpMantenimientoClientes.setSelectedIndex(0);
         } else {
-            String dni = (String) view.jtResumen.getValueAt(fila, 1);
+            String dni = (String) view.jtResumen.getValueAt(fila, 0);
             String primerNombre = (String) view.jtResumen.getValueAt(fila, 1);
             String segundoNombre = (String) view.jtResumen.getValueAt(fila, 2);
             String apellidoPaterno = (String) view.jtResumen.getValueAt(fila, 3);
             String apellidoMaterno = (String) view.jtResumen.getValueAt(fila, 4);
-            int edad = Integer.parseInt((String) view.jtResumen.getValueAt(fila, 0).toString());
+            int edad = Integer.parseInt((String) view.jtResumen.getValueAt(fila, 5).toString());
 
             view.txtDni.setText(dni);
             view.txtPrimerNombre.setText(primerNombre);
             view.txtSegundoNombre.setText(segundoNombre);
             view.txtApellidoPaterno.setText(apellidoPaterno);
             view.txtApellidoMaterno.setText(apellidoMaterno);
-            view.txtDni.setText("" + edad);
+            view.txtEdad.setText("" + edad);
 
             view.jtpMantenimientoClientes.setSelectedIndex(1);
             view.btnGuardar.setEnabled(false);
@@ -140,20 +141,36 @@ public class CtrlMantenimientoClientes implements ActionListener {
         cliente.setEdad(edad);
 
         clienteServicio.actualizar(cliente);
+
+        JOptionPane.showMessageDialog(view, "Cliente actualizado correctamente");
+        limpiarCasilleros(); //limpiar casilleros textField
+        limpiarTabla(); //Ambos son para que se limpie la tabla y se actualice
+        listar(view.jtResumen);
+
+        view.jtpMantenimientoClientes.setSelectedIndex(0);
+        view.btnGuardar.setEnabled(false);
+        view.btnNuevo.setEnabled(true);
+        view.btnEditar.setEnabled(true);
+        view.btnEliminar.setEnabled(true);
+        view.btnActualizar.setEnabled(false);
+        view.btnCancelar.setEnabled(false);
+        view.txtBuscarCliente.setEnabled(true);
+        view.btnBuscarCliente.setEnabled(true);
+        view.txtBuscarCliente.setText("");
     }
 
     public void eliminar() {
         int fila = view.jtResumen.getSelectedRow();
-        
-        if(fila == -1){
+
+        if (fila == -1) {
             JOptionPane.showMessageDialog(view, "Debe seleccionar un Cliente");
             view.jtpMantenimientoClientes.setSelectedIndex(0);
         } else {
-            String dni = (String)view.jtResumen.getValueAt(fila, 0);
+            String dni = (String) view.jtResumen.getValueAt(fila, 0);
             clienteServicio.eliminar(dni);
             JOptionPane.showMessageDialog(view, "Cliente eliminado correctamente");
             limpiarCasilleros();
-            limpiarTabla(); 
+            limpiarTabla();
             listar(view.jtResumen);
             view.txtBuscarCliente.setEnabled(true);
             view.txtBuscarCliente.setEnabled(true);
@@ -162,14 +179,14 @@ public class CtrlMantenimientoClientes implements ActionListener {
     }
 
     public void buscar(JTable tabla) {
-       this.modeloTabla = (DefaultTableModel)tabla.getModel();
+        this.modeloTabla = (DefaultTableModel) tabla.getModel();
         String dni;
         try {
             dni = view.txtBuscarCliente.getText();
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Error, casillero en blanco o no numerico.");
             listar(view.jtResumen);
-            return; 
+            return;
         }
 
         cliente = clienteServicio.buscarPorId(dni);
@@ -185,10 +202,10 @@ public class CtrlMantenimientoClientes implements ActionListener {
             objeto[4] = cliente.getSegundoApellido();
             objeto[5] = cliente.getEdad();
             modeloTabla.addRow(objeto);
-            
+
             view.jtResumen.setModel(modeloTabla);
             view.btnCancelar.setEnabled(true);
-        }        
+        }
     }
 
     @Override
@@ -196,7 +213,7 @@ public class CtrlMantenimientoClientes implements ActionListener {
         if (e.getSource() == view.btnNuevo) {
             limpiarCasilleros();
             view.jtpMantenimientoClientes.setSelectedIndex(1);
-            
+
             view.btnGuardar.setEnabled(true);
             view.btnNuevo.setEnabled(false);
             view.btnEditar.setEnabled(false);
