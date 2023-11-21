@@ -29,6 +29,9 @@ public class Login extends javax.swing.JFrame {
         background = new javax.swing.JPanel();
         nombreMarket = new javax.swing.JLabel();
         imgLogin = new javax.swing.JLabel();
+        botonSalida = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        header = new javax.swing.JPanel();
         nibble = new javax.swing.JLabel();
         loguito = new javax.swing.JLabel();
         iniSesion = new javax.swing.JLabel();
@@ -40,7 +43,6 @@ public class Login extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         labelBoton = new javax.swing.JPanel();
         contentBoton = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -59,6 +61,44 @@ public class Login extends javax.swing.JFrame {
 
         imgLogin.setIcon(new javax.swing.ImageIcon("C:\\Users\\dial_\\Documents\\NetBeansProjects\\supermarket\\src\\main\\java\\com\\nibble\\supermarket\\img\\login.jpg")); // NOI18N
         background.add(imgLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 310, 510));
+
+        botonSalida.setBackground(new java.awt.Color(255, 246, 246));
+
+        jLabel1.setText("X");
+
+        javax.swing.GroupLayout botonSalidaLayout = new javax.swing.GroupLayout(botonSalida);
+        botonSalida.setLayout(botonSalidaLayout);
+        botonSalidaLayout.setHorizontalGroup(
+            botonSalidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonSalidaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        botonSalidaLayout.setVerticalGroup(
+            botonSalidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botonSalidaLayout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 14, Short.MAX_VALUE))
+        );
+
+        background.add(botonSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
+
+        header.setBackground(new java.awt.Color(249, 135, 0));
+        header.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
+        header.setLayout(headerLayout);
+        headerLayout.setHorizontalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 810, Short.MAX_VALUE)
+        );
+        headerLayout.setVerticalGroup(
+            headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        background.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 30));
 
         nibble.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
         nibble.setText("SUPERMARKET NIBBLE");
@@ -126,19 +166,6 @@ public class Login extends javax.swing.JFrame {
 
         background.add(labelBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 140, 40));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 810, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
-        background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 30));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -200,12 +227,14 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
+    private javax.swing.JPanel botonSalida;
     private javax.swing.JLabel contentBoton;
     private javax.swing.JLabel contra;
+    private javax.swing.JPanel header;
     private javax.swing.JLabel imgLogin;
     private javax.swing.JTextField ingresoUsu1;
     private javax.swing.JLabel iniSesion;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

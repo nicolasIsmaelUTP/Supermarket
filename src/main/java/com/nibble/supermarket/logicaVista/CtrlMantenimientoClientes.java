@@ -1,6 +1,5 @@
 package com.nibble.supermarket.logicaVista;
 
-import com.nibble.supermarket.dao.DaoManager;
 import com.nibble.supermarket.modelo.Cliente;
 import com.nibble.supermarket.servicios.ClienteServicio;
 import com.nibble.supermarket.vista.MantenimientoClientes;
@@ -12,8 +11,6 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class CtrlMantenimientoClientes implements ActionListener {
-
-    //CLASE MODELO
     Cliente cliente = new Cliente();
     ClienteServicio clienteServicio = new ClienteServicio();
     MantenimientoClientes view = new MantenimientoClientes();
@@ -96,24 +93,24 @@ public class CtrlMantenimientoClientes implements ActionListener {
 
     public void llenarCasilleros() {
         int fila = view.jtResumen.getSelectedRow();
-        if(fila == -1){
+        if (fila == -1) {
             JOptionPane.showMessageDialog(view, "Debe seleccionar una fila");
             view.jtpMantenimientoClientes.setSelectedIndex(0);
         } else {
-            String dni = (String)view.jtResumen.getValueAt(fila, 1);
-            String primerNombre = (String)view.jtResumen.getValueAt(fila, 1);
-            String segundoNombre = (String)view.jtResumen.getValueAt(fila, 2);
-            String apellidoPaterno = (String)view.jtResumen.getValueAt(fila, 3);
-            String apellidoMaterno = (String)view.jtResumen.getValueAt(fila, 4);
-            int edad = Integer.parseInt((String)view.jtResumen.getValueAt(fila, 0).toString());
-            
+            String dni = (String) view.jtResumen.getValueAt(fila, 1);
+            String primerNombre = (String) view.jtResumen.getValueAt(fila, 1);
+            String segundoNombre = (String) view.jtResumen.getValueAt(fila, 2);
+            String apellidoPaterno = (String) view.jtResumen.getValueAt(fila, 3);
+            String apellidoMaterno = (String) view.jtResumen.getValueAt(fila, 4);
+            int edad = Integer.parseInt((String) view.jtResumen.getValueAt(fila, 0).toString());
+
             view.txtDni.setText(dni);
             view.txtPrimerNombre.setText(primerNombre);
             view.txtSegundoNombre.setText(segundoNombre);
             view.txtApellidoPaterno.setText(apellidoPaterno);
             view.txtApellidoMaterno.setText(apellidoMaterno);
-            view.txtDni.setText(""+edad);
-            
+            view.txtDni.setText("" + edad);
+
             view.jtpMantenimientoClientes.setSelectedIndex(1);
             view.btnGuardar.setEnabled(false);
             view.btnNuevo.setEnabled(false);
@@ -127,39 +124,118 @@ public class CtrlMantenimientoClientes implements ActionListener {
     }
 
     public void actualizar() {
+        String dni = view.txtDni.getText();
+        String primerNombre = view.txtPrimerNombre.getText();
+        String segundoNombre = view.txtSegundoNombre.getText();
+        String apellidoPaterno = view.txtApellidoPaterno.getText();
+        String apellidoMaterno = view.txtApellidoPaterno.getText();
+        int edad = Integer.parseInt(view.txtEdad.getText());
 
+        cliente.setDni(dni);
+        cliente.setPrimerNombre(primerNombre);
+        cliente.setSegundoNombre(segundoNombre);
+        cliente.setPrimerApellido(apellidoPaterno);
+        cliente.setSegundoApellido(apellidoMaterno);
+        cliente.setEdad(edad);
+
+        clienteServicio.actualizar(cliente);
     }
 
     public void eliminar() {
-
+        int fila = view.jtResumen.getSelectedRow();
+        
+        if(fila == -1){
+            JOptionPane.showMessageDialog(view, "Debe seleccionar un Cliente");
+            view.jtpMantenimientoClientes.setSelectedIndex(0);
+        } else {
+            String dni = (String)view.jtResumen.getValueAt(fila, 0);
+            clienteServicio.eliminar(dni);
+            JOptionPane.showMessageDialog(view, "Cliente eliminado correctamente");
+            limpiarCasilleros();
+            limpiarTabla(); 
+            listar(view.jtResumen);
+            view.txtBuscarCliente.setEnabled(true);
+            view.txtBuscarCliente.setEnabled(true);
+            view.txtBuscarCliente.setText("");
+        }
     }
 
-    public void buscar() {
+    public void buscar(JTable tabla) {
+       this.modeloTabla = (DefaultTableModel)tabla.getModel();
+        String dni;
+        try {
+            dni = view.txtBuscarCliente.getText();
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Error, casillero en blanco o no numerico.");
+            listar(view.jtResumen);
+            return; 
+        }
 
+        cliente = clienteServicio.buscarPorId(dni);
+        if (cliente == null || cliente.getDni().equals("")) {
+            JOptionPane.showMessageDialog(view, "No se encontró ningún Cliente con ese DNI.");
+            view.btnCancelar.setEnabled(true);
+        } else {
+            Object[] objeto = new Object[6];
+            objeto[0] = cliente.getDni();
+            objeto[1] = cliente.getPrimerNombre();
+            objeto[2] = cliente.getSegundoNombre();
+            objeto[3] = cliente.getPrimerApellido();
+            objeto[4] = cliente.getSegundoApellido();
+            objeto[5] = cliente.getEdad();
+            modeloTabla.addRow(objeto);
+            
+            view.jtResumen.setModel(modeloTabla);
+            view.btnCancelar.setEnabled(true);
+        }        
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == view.btnNuevo) {
-
+            limpiarCasilleros();
+            view.jtpMantenimientoClientes.setSelectedIndex(1);
+            
+            view.btnGuardar.setEnabled(true);
+            view.btnNuevo.setEnabled(false);
+            view.btnEditar.setEnabled(false);
+            view.btnEliminar.setEnabled(false);
+            view.btnActualizar.setEnabled(false);
+            view.txtBuscarCliente.setEnabled(false);
+            view.btnBuscarCliente.setEnabled(false);
+            view.btnCancelar.setEnabled(true);
+            view.txtBuscarCliente.setText("");
         }
         if (e.getSource() == view.btnGuardar) {
-
+            guardar();
         }
         if (e.getSource() == view.btnEditar) {
-
+            llenarCasilleros();
         }
         if (e.getSource() == view.btnActualizar) {
-
+            actualizar();
         }
         if (e.getSource() == view.btnEliminar) {
-
+            eliminar();
         }
         if (e.getSource() == view.btnCancelar) {
-
+            limpiarTabla();
+            limpiarCasilleros();
+            listar(view.jtResumen);
+            view.txtBuscarCliente.setText("");
+            view.jtpMantenimientoClientes.setSelectedIndex(0);
+            view.btnCancelar.setEnabled(false);
+            view.btnGuardar.setEnabled(false);
+            view.btnNuevo.setEnabled(true);
+            view.btnEditar.setEnabled(true);
+            view.btnEliminar.setEnabled(true);
+            view.btnActualizar.setEnabled(false);
+            view.txtBuscarCliente.setEnabled(true);
+            view.btnBuscarCliente.setEnabled(true);
         }
         if (e.getSource() == view.btnBuscarCliente) {
-
+            limpiarTabla();
+            buscar(view.jtResumen);
         }
     }
 

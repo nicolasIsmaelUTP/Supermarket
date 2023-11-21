@@ -17,6 +17,7 @@ public class DaoManager {
     private TurnoJpaController turnos = null;
     private TicketJpaController tickets = null;
     private LineaJpaController lineas = null;
+    private PromocionJpaController promociones = null;
 
     // Constructor privado
     public DaoManager() {
@@ -73,6 +74,13 @@ public class DaoManager {
             lineas = new LineaJpaController(emf);
         }
         return lineas;
+    }
+
+    public PromocionJpaController getPromocionDao() {
+        if (promociones == null) {
+            promociones = new PromocionJpaController(emf);
+        }
+        return promociones;
     }
 
 }
