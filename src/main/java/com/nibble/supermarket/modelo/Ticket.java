@@ -82,6 +82,14 @@ public class Ticket implements Serializable {
         this.total = total;
     }
 
+    public Turno getTurno() {
+        return turno;
+    }
+
+    public void setTurno(Turno turno) {
+        this.turno = turno;
+    }
+
     // Métodos de conveniencia para agregar y remover lineas
     public Linea addLinea(Linea linea) {
         getLineas().add(linea);
