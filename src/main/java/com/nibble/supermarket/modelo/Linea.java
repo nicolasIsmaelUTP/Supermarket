@@ -75,7 +75,7 @@ public class Linea implements Serializable {
      * se aplica la promoción. En caso contrario, se calcula el subtotal sin promoción.
      * @return El subtotal de la línea.
      */
-    public double calcularSubTotal() {
+    public double calcularSubTotal() {           
         // Verificar si la cantidad es mayor o igual a 3
         if (cantidad >= 3) {
             // Buscar la promoción "3x2" en las promociones del producto

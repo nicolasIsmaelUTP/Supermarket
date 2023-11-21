@@ -28,6 +28,7 @@ public class Ticket implements Serializable {
     private Turno turno;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "ticket")
     private List<Linea> lineas;
+    private double total;
 
     public Ticket() {
     }
@@ -70,6 +71,14 @@ public class Ticket implements Serializable {
         this.lineas = lineas;
     }
 
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
     // Métodos de conveniencia para agregar y remover lineas
     public Linea addLinea(Linea linea) {
         getLineas().add(linea);
@@ -92,7 +101,7 @@ public class Ticket implements Serializable {
     //     addLinea(linea);
     //     return linea;
     // }
-    
+
     public void registrarVenta(Producto producto) {
         Linea linea = new Linea();
         linea.setCantidad(1);
