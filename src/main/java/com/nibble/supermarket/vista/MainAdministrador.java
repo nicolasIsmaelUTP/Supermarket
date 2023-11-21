@@ -6,6 +6,7 @@ package com.nibble.supermarket.vista;
 
 import com.nibble.supermarket.logicaVista.CtrlMantenimientoClientes;
 import com.nibble.supermarket.logicaVista.CtrlMantenimientoEmpleados;
+import com.nibble.supermarket.logicaVista.CtrlMantenimientoProductos;
 import javax.swing.JFrame;
 import javax.xml.crypto.dsig.spec.C14NMethodParameterSpec;
 
@@ -17,6 +18,7 @@ public class MainAdministrador extends javax.swing.JFrame {
 
     MantenimientoClientes v1;
     MatenimientoEmpleados v2;
+    MantenimientoProductos v3;
     
     public MainAdministrador() {
         initComponents();
@@ -37,6 +39,7 @@ public class MainAdministrador extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         subMantClientes = new javax.swing.JMenuItem();
         subAdmEmpleados = new javax.swing.JMenuItem();
+        subMantProductos = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,7 +57,7 @@ public class MainAdministrador extends javax.swing.JFrame {
 
         jMenu1.setText("Menu");
 
-        subMantClientes.setText("Administración de clientes");
+        subMantClientes.setText("Mantenimiento de clientes");
         subMantClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subMantClientesActionPerformed(evt);
@@ -62,13 +65,21 @@ public class MainAdministrador extends javax.swing.JFrame {
         });
         jMenu1.add(subMantClientes);
 
-        subAdmEmpleados.setText("Administración de empleados");
+        subAdmEmpleados.setText("Mantenimineto de empleados");
         subAdmEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 subAdmEmpleadosActionPerformed(evt);
             }
         });
         jMenu1.add(subAdmEmpleados);
+
+        subMantProductos.setText("Mantenimiento de productos");
+        subMantProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subMantProductosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(subMantProductos);
 
         jMenuBar1.add(jMenu1);
 
@@ -123,6 +134,22 @@ public class MainAdministrador extends javax.swing.JFrame {
         } 
     }//GEN-LAST:event_subAdmEmpleadosActionPerformed
 
+    private void subMantProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMantProductosActionPerformed
+        if (v3 == null || v3.isClosed()) {
+            v3 = new MantenimientoProductos();
+            CtrlMantenimientoProductos c3 = new CtrlMantenimientoProductos(v3);
+            
+            jdpMainAdministrador.add(v3); //Agregamos al JDesktopPane
+
+            //Para que aparezca en el centro
+            int x = (jdpMainAdministrador.getWidth() - v3.getWidth()) / 2;
+            int y = (jdpMainAdministrador.getHeight() - v3.getHeight()) / 2;
+            v3.setLocation(x, y);
+            
+            c3.iniciar();
+        }
+    }//GEN-LAST:event_subMantProductosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -165,5 +192,6 @@ public class MainAdministrador extends javax.swing.JFrame {
     public javax.swing.JDesktopPane jdpMainAdministrador;
     private javax.swing.JMenuItem subAdmEmpleados;
     public javax.swing.JMenuItem subMantClientes;
+    private javax.swing.JMenuItem subMantProductos;
     // End of variables declaration//GEN-END:variables
 }

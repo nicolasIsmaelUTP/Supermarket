@@ -1,6 +1,5 @@
 package com.nibble.supermarket.logicaVista;
 
-import com.nibble.supermarket.modelo.Cliente;
 import com.nibble.supermarket.modelo.Empleado;
 import com.nibble.supermarket.servicios.EmpleadoServicio;
 import com.nibble.supermarket.vista.MatenimientoEmpleados;
@@ -198,12 +197,11 @@ public class CtrlMantenimientoEmpleados implements ActionListener {
         }
 
         if(view.txtBuscarEmpleado.getText().equals("")){
-            JOptionPane.showMessageDialog(view, "El campo esta vacio, ingrese el DNI por favor.");
+            JOptionPane.showMessageDialog(view, "El campo esta vacio, ingrese un DNI por favor.");
         } else {
             empleado = empleadoServicio.buscarPorId(dni);
             if (empleado == null || empleado.getDni().equals("")) {
                 JOptionPane.showMessageDialog(view, "No se encontro ningun Empleado con ese DNI.");
-                view.btnCancelar.setEnabled(true);
             } else {
                 limpiarTabla();
                 Object[] objeto = new Object[6];
