@@ -16,6 +16,8 @@ public class Linea implements Serializable {
     @ManyToOne
     private Producto producto;
     private TipoLinea tipoLinea;
+    @ManyToOne
+    private Ticket ticket;
 
     public Linea() {
     }

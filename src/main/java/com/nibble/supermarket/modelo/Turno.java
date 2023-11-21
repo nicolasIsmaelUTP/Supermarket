@@ -19,7 +19,7 @@ public class Turno implements Serializable {
     private TipoTurno tipoTurno;
     @ManyToOne
     private Empleado empleado;
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "turno")
     private List<Ticket> tickets;
 
     public Turno() {
