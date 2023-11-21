@@ -2,6 +2,7 @@ package com.nibble.supermarket.servicios;
 
 import com.nibble.supermarket.dao.DaoManager;
 import com.nibble.supermarket.dao.exceptions.NonexistentEntityException;
+import com.nibble.supermarket.modelo.Linea;
 import com.nibble.supermarket.modelo.Ticket;
 import java.util.List;
 import java.util.logging.Level;
@@ -42,4 +43,34 @@ public class TicketServicio implements IServicio<Ticket, Integer>{
         return DaoManager.getInstance().getTicketDao().findTicketEntities();
     }
     
+
+    /**
+     * Cierra un ticket y lo guarda en el sistema.
+     * 
+     * @param ticket El ticket a cerrar.
+     */
+    public void cerrarTicket(Ticket ticket) {
+        guardar(ticket);
+    }
+
+    public String mostrarTicket(Ticket ticket) {
+        String texto = "";
+        // Cabecera
+        texto += "Fecha: " + ticket.getFecha() + "\n";
+        texto += "Nro. de ticket: " + ticket.getId() + "\n";
+        texto += "Cliente: " + ticket.getCliente().getPrimerApellido()+ " ";
+        texto += ticket.getCliente().getSegundoApellido()+ " ";
+        texto += ticket.getCliente().getPrimerNombre()+ " ";
+        texto += ticket.getCliente().getSegundoNombre()+ "\n";
+        texto += "----------------------------------------\n";
+        // Cuerpo
+        for (Linea linea : ticket.getLineas()) {
+            texto += linea.getProducto().getNombre() + " x " + linea.getCantidad() + " = " + linea.getSubtotal() + "\n";
+        }
+        texto += "----------------------------------------\n";
+        // Pie
+        texto += "Total: " + ticket.getTotal() + "\n";
+        texto += "Gracias por su compra!";
+        return texto;
+    }
 }

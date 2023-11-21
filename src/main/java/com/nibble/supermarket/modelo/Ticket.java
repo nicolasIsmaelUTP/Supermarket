@@ -72,6 +72,9 @@ public class Ticket implements Serializable {
     }
 
     public double getTotal() {
+        for (Linea linea : lineas) {
+            total += linea.getSubtotal();
+        }
         return total;
     }
 
