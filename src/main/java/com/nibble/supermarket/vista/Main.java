@@ -27,29 +27,27 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        BtnCerrarSesion = new javax.swing.JLabel();
+        BtnRegistrarPedido = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        BtnImprimirTicket = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(248, 211, 176));
+        jPanel1.setBackground(new java.awt.Color(249, 211, 176));
         jPanel1.setToolTipText("");
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/nibble/supermarket/img/iconlogin.png"))); // NOI18N
-        jLabel3.setToolTipText("");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 110, 100));
 
         jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel4.setText("NombreUsuario");
@@ -57,51 +55,61 @@ public class Main extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel5.setText("Conectado");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 197, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/nibble/supermarket/img/Punto_verde.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, -1, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/llogin.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-linea.png"))); // NOI18N
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 195, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(250, 172, 119));
         jLabel2.setOpaque(true);
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 250));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 230));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-cerrar.png"))); // NOI18N
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 730, -1, -1));
 
-        jLabel7.setBackground(new java.awt.Color(252, 203, 166));
-        jLabel7.setFont(new java.awt.Font("PT Mono", 0, 18)); // NOI18N
-        jLabel7.setText("           Cerrar Sesion");
-        jLabel7.setIconTextGap(40);
-        jLabel7.setOpaque(true);
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, 350, 60));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-registrar.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/nibble/supermarket/img/icon-registrar.png"))); // NOI18N
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
+        BtnCerrarSesion.setBackground(new java.awt.Color(252, 203, 166));
+        BtnCerrarSesion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        BtnCerrarSesion.setText("                         Cerrar Sesion");
+        BtnCerrarSesion.setIconTextGap(40);
+        BtnCerrarSesion.setOpaque(true);
+        jPanel1.add(BtnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, 350, 60));
 
-        jLabel8.setBackground(new java.awt.Color(240, 240, 240));
-        jLabel8.setFont(new java.awt.Font("PT Mono", 0, 18)); // NOI18N
-        jLabel8.setText("         Registrar Pedido");
-        jLabel8.setIconTextGap(40);
-        jLabel8.setOpaque(true);
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 350, 60));
+        BtnRegistrarPedido.setBackground(new java.awt.Color(240, 240, 240));
+        BtnRegistrarPedido.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        BtnRegistrarPedido.setText("                    Registrar Pedido");
+        BtnRegistrarPedido.setIconTextGap(40);
+        BtnRegistrarPedido.setOpaque(true);
+        jPanel1.add(BtnRegistrarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 350, 60));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-ticket.png"))); // NOI18N
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
 
-        jLabel9.setBackground(new java.awt.Color(240, 240, 240));
-        jLabel9.setFont(new java.awt.Font("PT Mono", 0, 18)); // NOI18N
-        jLabel9.setText("         Imprimir ticket");
-        jLabel9.setIconTextGap(40);
-        jLabel9.setOpaque(true);
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 350, 60));
+        BtnImprimirTicket.setBackground(new java.awt.Color(240, 240, 240));
+        BtnImprimirTicket.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        BtnImprimirTicket.setText("                     Imprimir ticket");
+        BtnImprimirTicket.setIconTextGap(40);
+        BtnImprimirTicket.setOpaque(true);
+        jPanel1.add(BtnImprimirTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 350, 60));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 780));
+
+        jLabel13.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
+        jLabel13.setText("SUPERMARKET NIBBLE");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 40, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(250, 172, 119));
         jLabel1.setOpaque(true);
         jLabel1.setVerifyInputWhenFocusTarget(false);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 1080, 120));
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 1080, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -140,18 +148,20 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BtnCerrarSesion;
+    private javax.swing.JLabel BtnImprimirTicket;
+    private javax.swing.JLabel BtnRegistrarPedido;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
