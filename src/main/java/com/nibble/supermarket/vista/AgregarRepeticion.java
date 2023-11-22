@@ -93,11 +93,11 @@ public class AgregarRepeticion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnAgregar;
+    public javax.swing.JButton BtnAgregar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtCantidad;
-    private javax.swing.JTextField txtCodigo;
+    public javax.swing.JTextField txtCantidad;
+    public javax.swing.JTextField txtCodigo;
     // End of variables declaration//GEN-END:variables
 }

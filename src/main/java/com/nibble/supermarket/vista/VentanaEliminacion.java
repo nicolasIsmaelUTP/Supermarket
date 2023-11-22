@@ -107,10 +107,10 @@ public class VentanaEliminacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnAgregar;
+    public javax.swing.JButton BtnAgregar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtentrada;
+    public javax.swing.JTextField txtentrada;
     // End of variables declaration//GEN-END:variables
 }
