@@ -50,14 +50,13 @@ public class Main extends javax.swing.JFrame  {
         jPanel2 = new javax.swing.JPanel();
         BtnVentas = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
         BtnRepeticion = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
         BtnAnulacion = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
         btnCerrarSesion = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        BtnImprimir = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
@@ -88,7 +87,9 @@ public class Main extends javax.swing.JFrame  {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 230));
 
         jPanel2.setBackground(new java.awt.Color(246, 246, 246));
-        jPanel2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 40, 10));
+        java.awt.FlowLayout flowLayout1 = new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 0, 0);
+        flowLayout1.setAlignOnBaseline(true);
+        jPanel2.setLayout(flowLayout1);
 
         BtnVentas.setBackground(new java.awt.Color(240, 240, 240));
         BtnVentas.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -99,6 +100,7 @@ public class Main extends javax.swing.JFrame  {
         BtnVentas.setBorderPainted(false);
         BtnVentas.setContentAreaFilled(false);
         BtnVentas.setIconTextGap(40);
+        BtnVentas.setPreferredSize(new java.awt.Dimension(300, 60));
         BtnVentas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnVentasActionPerformed(evt);
@@ -109,16 +111,16 @@ public class Main extends javax.swing.JFrame  {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 350, 60));
 
         jPanel3.setBackground(new java.awt.Color(246, 246, 246));
-        jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 40, 10));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-repetir.png"))); // NOI18N
-        jPanel3.add(jLabel7);
+        jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 0, 0));
 
         BtnRepeticion.setBackground(new java.awt.Color(240, 240, 240));
         BtnRepeticion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        BtnRepeticion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-repetir.png"))); // NOI18N
         BtnRepeticion.setText("Repetición");
         BtnRepeticion.setBorderPainted(false);
         BtnRepeticion.setContentAreaFilled(false);
+        BtnRepeticion.setIconTextGap(40);
+        BtnRepeticion.setPreferredSize(new java.awt.Dimension(350, 60));
         BtnRepeticion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnRepeticionActionPerformed(evt);
@@ -129,16 +131,16 @@ public class Main extends javax.swing.JFrame  {
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 350, 60));
 
         jPanel4.setBackground(new java.awt.Color(246, 246, 246));
-        jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 40, 10));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon-borrar.png"))); // NOI18N
-        jPanel4.add(jLabel8);
+        jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 20, 0));
 
         BtnAnulacion.setBackground(new java.awt.Color(240, 240, 240));
         BtnAnulacion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        BtnAnulacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon-borrar.png"))); // NOI18N
         BtnAnulacion.setText("Anulación");
         BtnAnulacion.setBorderPainted(false);
         BtnAnulacion.setContentAreaFilled(false);
+        BtnAnulacion.setIconTextGap(40);
+        BtnAnulacion.setPreferredSize(new java.awt.Dimension(300, 60));
         BtnAnulacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnAnulacionActionPerformed(evt);
@@ -149,16 +151,16 @@ public class Main extends javax.swing.JFrame  {
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 350, 60));
 
         jPanel5.setBackground(new java.awt.Color(252, 203, 166));
-        jPanel5.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 40, 10));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-cerrar.png"))); // NOI18N
-        jPanel5.add(jLabel12);
+        jPanel5.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 0, 0));
 
         btnCerrarSesion.setBackground(new java.awt.Color(252, 203, 166));
         btnCerrarSesion.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-cerrar.png"))); // NOI18N
         btnCerrarSesion.setText("Cerrar Sesión");
         btnCerrarSesion.setBorderPainted(false);
         btnCerrarSesion.setContentAreaFilled(false);
+        btnCerrarSesion.setIconTextGap(40);
+        btnCerrarSesion.setPreferredSize(new java.awt.Dimension(350, 70));
         btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarSesionActionPerformed(evt);
@@ -167,6 +169,26 @@ public class Main extends javax.swing.JFrame  {
         jPanel5.add(btnCerrarSesion);
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, 350, 70));
+
+        jPanel6.setBackground(new java.awt.Color(246, 246, 246));
+        jPanel6.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 20, 0));
+
+        BtnImprimir.setBackground(new java.awt.Color(240, 240, 240));
+        BtnImprimir.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        BtnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon-ticket.png"))); // NOI18N
+        BtnImprimir.setText("Imprimir");
+        BtnImprimir.setBorderPainted(false);
+        BtnImprimir.setContentAreaFilled(false);
+        BtnImprimir.setIconTextGap(40);
+        BtnImprimir.setPreferredSize(new java.awt.Dimension(300, 60));
+        BtnImprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnImprimirActionPerformed(evt);
+            }
+        });
+        jPanel6.add(BtnImprimir);
+
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 350, 60));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 780));
 
@@ -210,6 +232,10 @@ public class Main extends javax.swing.JFrame  {
         s.setVisible(true);
     }//GEN-LAST:event_BtnVentasActionPerformed
 
+    private void BtnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnImprimirActionPerformed
+        JOptionPane.showMessageDialog(this, "Reporte generado", "Informe", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_BtnImprimirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -246,25 +272,24 @@ public class Main extends javax.swing.JFrame  {
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnAnulacion;
-    private javax.swing.JButton BtnRepeticion;
-    private javax.swing.JButton BtnVentas;
-    private javax.swing.JButton btnCerrarSesion;
+    public javax.swing.JButton BtnAnulacion;
+    public javax.swing.JButton BtnImprimir;
+    public javax.swing.JButton BtnRepeticion;
+    public javax.swing.JButton BtnVentas;
+    public javax.swing.JButton btnCerrarSesion;
     private javax.swing.JPanel content;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     public javax.swing.JLabel txtUsuario;
     // End of variables declaration//GEN-END:variables
 
