@@ -5,10 +5,14 @@ import java.awt.Color;
 
 public class Login extends javax.swing.JFrame {
     
+    
     int xMouse, yMouse;
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        
+        
     }
 
     
@@ -26,12 +30,10 @@ public class Login extends javax.swing.JFrame {
         loguito = new javax.swing.JLabel();
         iniSesion = new javax.swing.JLabel();
         contra = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
         usuu = new javax.swing.JLabel();
-        txtUsername = new javax.swing.JTextField();
-        jSeparator2 = new javax.swing.JSeparator();
-        txtPassword = new javax.swing.JPasswordField();
         btnIniciarSesion = new javax.swing.JButton();
+        txtUsername = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -133,45 +135,10 @@ public class Login extends javax.swing.JFrame {
         contra.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         contra.setText("Contraseña");
         background.add(contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
-        background.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 300, 40));
 
         usuu.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         usuu.setText("Usuario");
         background.add(usuu, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
-
-        txtUsername.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtUsername.setForeground(new java.awt.Color(255, 204, 153));
-        txtUsername.setText("Ingrese su número de DNI");
-        txtUsername.setToolTipText("");
-        txtUsername.setBorder(null);
-        txtUsername.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtUsernameMousePressed(evt);
-            }
-        });
-        txtUsername.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsernameActionPerformed(evt);
-            }
-        });
-        background.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 280, 30));
-        background.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 300, 40));
-
-        txtPassword.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtPassword.setForeground(new java.awt.Color(255, 204, 153));
-        txtPassword.setText("********");
-        txtPassword.setBorder(null);
-        txtPassword.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtPasswordMousePressed(evt);
-            }
-        });
-        txtPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPasswordActionPerformed(evt);
-            }
-        });
-        background.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 250, 30));
 
         btnIniciarSesion.setBackground(new java.awt.Color(255, 153, 0));
         btnIniciarSesion.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
@@ -183,6 +150,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
         background.add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 140, 50));
+        background.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 310, 40));
+        background.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 300, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -197,14 +166,6 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsernameActionPerformed
-
-    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMousePressed
         xMouse=evt.getX();
@@ -234,22 +195,6 @@ public class Login extends javax.swing.JFrame {
         contentSalida.setBackground(Color.RED);
 
     }//GEN-LAST:event_botonSalidaMouseExited
-
-    private void txtUsernameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsernameMousePressed
-        txtUsername.setText("");
-        txtUsername.setForeground(Color.black);
-        txtPassword.setText("*********");
-        txtPassword.setForeground(Color.gray);
-
-    }//GEN-LAST:event_txtUsernameMousePressed
-
-    private void txtPasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPasswordMousePressed
-        txtUsername.setText("Ingrese su número de DNI");
-        txtUsername.setForeground(Color.gray);
-        txtPassword.setText("");
-        txtPassword.setForeground(Color.black);
-
-    }//GEN-LAST:event_txtPasswordMousePressed
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         // TODO add your handling code here:
@@ -297,8 +242,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel header;
     private javax.swing.JLabel imgLogin;
     private javax.swing.JLabel iniSesion;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel loguito;
     private javax.swing.JLabel nibble;
     private javax.swing.JLabel nombreMarket;

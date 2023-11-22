@@ -43,7 +43,7 @@ public class Main extends javax.swing.JFrame  {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -67,9 +67,9 @@ public class Main extends javax.swing.JFrame  {
         jPanel1.setToolTipText("");
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jLabel4.setText("NombreUsuario");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 130, -1));
+        txtUsuario.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txtUsuario.setText("NombreUsuario");
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 130, -1));
 
         jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel5.setText("Conectado");
@@ -226,12 +226,12 @@ public class Main extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    public javax.swing.JLabel txtUsuario;
     // End of variables declaration//GEN-END:variables
 
 
