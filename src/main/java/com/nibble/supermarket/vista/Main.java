@@ -14,22 +14,8 @@ public class Main extends javax.swing.JFrame  {
      */
     public Main() {
         initComponents();
-        Repetición p1 = new Repetición();
-        InitContent(p1);
-        
-        
     }
     
-    private void InitContent(JPanel p){
-        p.setSize(860, 480);
-        p.setLocation(0, 0);
-        
-        content.removeAll();
-        content.add(p, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
-        
-    }
     
 
     /**
@@ -59,7 +45,10 @@ public class Main extends javax.swing.JFrame  {
         BtnImprimir = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        content = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ta_info = new javax.swing.JTextArea();
+        tf_dnicliente = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -201,25 +190,26 @@ public class Main extends javax.swing.JFrame  {
         jLabel1.setVerifyInputWhenFocusTarget(false);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 1080, 120));
 
-        content.setBackground(new java.awt.Color(204, 204, 204));
-        content.setAlignmentX(0.0F);
-        content.setAlignmentY(0.0F);
-        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 1080, 660));
+        ta_info.setColumns(20);
+        ta_info.setRows(5);
+        jScrollPane1.setViewportView(ta_info);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, 730, 540));
+        getContentPane().add(tf_dnicliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 200, -1));
+
+        jLabel4.setText("DNI cliente");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     
     private void BtnRepeticionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRepeticionActionPerformed
-        AgregarRepeticion r = new AgregarRepeticion();
-        r.setLocationRelativeTo(this);
-        r.setVisible(true);
+
     }//GEN-LAST:event_BtnRepeticionActionPerformed
 
     private void BtnAnulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAnulacionActionPerformed
-        VentanaEliminacion v = new VentanaEliminacion();
-        v.setLocationRelativeTo(this);
-        v.setVisible(true);
+   
     }//GEN-LAST:event_BtnAnulacionActionPerformed
 
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
@@ -227,13 +217,10 @@ public class Main extends javax.swing.JFrame  {
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     private void BtnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVentasActionPerformed
-        AgregarVentas s = new AgregarVentas();
-        s.setLocationRelativeTo(this);
-        s.setVisible(true);
+  
     }//GEN-LAST:event_BtnVentasActionPerformed
 
     private void BtnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnImprimirActionPerformed
-        JOptionPane.showMessageDialog(this, "Reporte generado", "Informe", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_BtnImprimirActionPerformed
 
     /**
@@ -277,12 +264,12 @@ public class Main extends javax.swing.JFrame  {
     public javax.swing.JButton BtnRepeticion;
     public javax.swing.JButton BtnVentas;
     public javax.swing.JButton btnCerrarSesion;
-    private javax.swing.JPanel content;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -290,6 +277,9 @@ public class Main extends javax.swing.JFrame  {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTextArea ta_info;
+    public javax.swing.JTextField tf_dnicliente;
     public javax.swing.JLabel txtUsuario;
     // End of variables declaration//GEN-END:variables
 

@@ -1,9 +1,11 @@
 package com.nibble.supermarket.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -21,13 +23,13 @@ public class Ticket implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fecha;
+    private Date fecha = new Date();
     @ManyToOne
-    private Cliente cliente;
+    private Cliente cliente = new Cliente();
     @ManyToOne
     private Turno turno;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "ticket")
-    private List<Linea> lineas;
+    private List<Linea> lineas = new ArrayList<>();
     private double total;
 
     public Ticket() {
@@ -72,6 +74,7 @@ public class Ticket implements Serializable {
     }
 
     public double getTotal() {
+        total = 0;
         for (Linea linea : lineas) {
             total += linea.getSubtotal();
         }
@@ -92,14 +95,16 @@ public class Ticket implements Serializable {
 
     // Métodos de conveniencia para agregar y remover lineas
     public Linea addLinea(Linea linea) {
-        getLineas().add(linea);
+        lineas.add(linea);
         return linea;
     }
 
     public Linea removeLinea(Linea linea) {
-        getLineas().remove(linea);
+        lineas.remove(linea);
         return linea;
     }
+    
+    
 
     // public Linea registrarVenta(Linea linea){
     //     linea.setTipoLinea(TipoLinea.VENTA);
@@ -118,6 +123,8 @@ public class Ticket implements Serializable {
         linea.setCantidad(1);
         linea.setProducto(producto);
         linea.setTipoLinea(TipoLinea.VENTA);
+        linea.setTicket(this);
+        linea.getSubtotal();
         addLinea(linea);
 
         // Restar stock de producto
@@ -129,6 +136,8 @@ public class Ticket implements Serializable {
         linea.setCantidad(cantidad);
         linea.setProducto(producto);
         linea.setTipoLinea(TipoLinea.REPETICION);
+        linea.setTicket(this);
+        linea.getSubtotal();
         addLinea(linea);
 
         // Restar stock de producto
@@ -140,6 +149,8 @@ public class Ticket implements Serializable {
         lineaAnulacion.setCantidad(-linea.getCantidad());
         lineaAnulacion.setProducto(linea.getProducto());
         lineaAnulacion.setTipoLinea(TipoLinea.ANULACION);
+        lineaAnulacion.setTicket(this);
+        linea.getSubtotal();
         addLinea(lineaAnulacion);
 
         // Sumar stock de producto
@@ -151,6 +162,7 @@ public class Ticket implements Serializable {
         linea.setCantidad(1);
         linea.setProducto(producto);
         linea.setTipoLinea(TipoLinea.DEVOLUCION);
+        linea.getSubtotal();
         addLinea(linea);
 
         // Sumar stock de producto

@@ -1,6 +1,8 @@
 package com.nibble.supermarket.modelo;
 
 import java.io.Serializable;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +18,7 @@ public class Linea implements Serializable {
     @ManyToOne
     private Producto producto;
     private TipoLinea tipoLinea;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Ticket ticket;
     private double subtotal;
 
@@ -68,6 +70,14 @@ public class Linea implements Serializable {
 
     public void setSubtotal(double subtotal) {
         this.subtotal = subtotal;
+    }
+
+    public Ticket getTicket() {
+        return ticket;
+    }
+
+    public void setTicket(Ticket t) {
+        this.ticket = t;
     }
 
     /**

@@ -1,9 +1,16 @@
 package com.nibble.supermarket.servicios;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.nibble.supermarket.dao.DaoManager;
 import com.nibble.supermarket.dao.exceptions.NonexistentEntityException;
 import com.nibble.supermarket.modelo.Linea;
 import com.nibble.supermarket.modelo.Ticket;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -62,6 +69,7 @@ public class TicketServicio implements IServicio<Ticket, Integer>{
         texto += ticket.getCliente().getSegundoApellido()+ " ";
         texto += ticket.getCliente().getPrimerNombre()+ " ";
         texto += ticket.getCliente().getSegundoNombre()+ "\n";
+        texto += "Edad: " + ticket.getCliente().getEdad() + "\n";
         texto += "----------------------------------------\n";
         // Cuerpo
         for (Linea linea : ticket.getLineas()) {
@@ -72,5 +80,22 @@ public class TicketServicio implements IServicio<Ticket, Integer>{
         texto += "Total: " + ticket.getTotal() + "\n";
         texto += "Gracias por su compra!";
         return texto;
+    }
+
+    public void crearPDF(Ticket ticket) {
+        Document document = new Document();
+
+        try {
+            PdfWriter.getInstance(document, new FileOutputStream("Ticket.pdf"));
+
+            document.open();
+
+            String ticketInfo = mostrarTicket(ticket);
+            document.add(new Paragraph(ticketInfo));
+
+            document.close();
+        } catch (DocumentException | FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
