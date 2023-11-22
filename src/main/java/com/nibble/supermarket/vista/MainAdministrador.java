@@ -35,6 +35,7 @@ public class MainAdministrador extends javax.swing.JFrame {
     private void initComponents() {
 
         jdpMainAdministrador = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         subMantClientes = new javax.swing.JMenuItem();
@@ -46,15 +47,23 @@ public class MainAdministrador extends javax.swing.JFrame {
 
         jdpMainAdministrador.setBackground(new java.awt.Color(230, 244, 245));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image-admin.png"))); // NOI18N
+
+        jdpMainAdministrador.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout jdpMainAdministradorLayout = new javax.swing.GroupLayout(jdpMainAdministrador);
         jdpMainAdministrador.setLayout(jdpMainAdministradorLayout);
         jdpMainAdministradorLayout.setHorizontalGroup(
             jdpMainAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 934, Short.MAX_VALUE)
+            .addGroup(jdpMainAdministradorLayout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jdpMainAdministradorLayout.setVerticalGroup(
             jdpMainAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 601, Short.MAX_VALUE)
+            .addGroup(jdpMainAdministradorLayout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Menu");
@@ -192,6 +201,7 @@ public class MainAdministrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
