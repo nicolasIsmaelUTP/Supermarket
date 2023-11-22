@@ -4,7 +4,6 @@
  */
 package com.nibble.supermarket.vista;
 import java.awt.BorderLayout;
-import javax.swing.JOptionPane;
 import javax.swing.*;
 
  
@@ -188,12 +187,6 @@ public class Main extends javax.swing.JFrame  {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVentasActionPerformed
-        AgregarVentas s = new AgregarVentas();
-        s.setLocationRelativeTo(this);
-        s.setVisible(true);
-    }//GEN-LAST:event_BtnVentasActionPerformed
-
     
     private void BtnRepeticionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRepeticionActionPerformed
         AgregarRepeticion r = new AgregarRepeticion();
@@ -210,6 +203,12 @@ public class Main extends javax.swing.JFrame  {
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
+
+    private void BtnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVentasActionPerformed
+        AgregarVentas s = new AgregarVentas();
+        s.setLocationRelativeTo(this);
+        s.setVisible(true);
+    }//GEN-LAST:event_BtnVentasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -262,6 +261,10 @@ public class Main extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     public javax.swing.JLabel txtUsuario;
     // End of variables declaration//GEN-END:variables
 
